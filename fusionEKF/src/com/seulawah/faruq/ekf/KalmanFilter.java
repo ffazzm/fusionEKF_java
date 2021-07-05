@@ -49,9 +49,9 @@ public class KalmanFilter {
 
         if (y.getDimension() == 3) {
             y.setEntry(1, Math.atan2(Math.sin(y.getEntry(1)), Math.cos(y.getEntry(1))));
-            this.x = this.x.add(K.operate(y));
-            this.P = (this.I.subtract(K.multiply(H)).multiply(this.P));
         }
+        this.x = this.x.add(K.operate(y));
+        this.P = (this.I.subtract(K.multiply(H)).multiply(this.P));
     }
 
 
